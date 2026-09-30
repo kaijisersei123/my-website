@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --pink: #ff4f8b;
+    --light-pink: #ffe4ee;
+    --soft-pink: #fff5f8;
+    --dark-pink: #c92d66;
+    --text: #3b2730;
+    --white: #ffffff;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--soft-pink);
+    color: var(--text);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: rgba(255, 245, 248, 0.85);
+    backdrop-filter: blur(12px);
+
+    z-index: 1000;
+}
+
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--dark-pink);
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffd4e3 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ffc4d9 0%, transparent 30%),
+        var(--soft-pink);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero-content {
+    max-width: 800px;
+}
+
+
+.small-title,
+.section-label {
+    color: var(--pink);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 9vw, 110px);
+    line-height: 0.95;
+    margin-bottom: 30px;
+}
+
+
+.hero h1 span {
+    color: var(--dark-pink);
+}
+
+
+.hero-text {
+    font-size: 18px;
+    margin-bottom: 35px;
+    color: #765761;
+}
+
+
+.main-button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: var(--pink);
+    color: white;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    box-shadow: 0 10px 30px rgba(255, 79, 139, 0.25);
+
+    transition: 0.3s;
+}
+
+
+.main-button:hover {
+    transform: translateY(-4px);
+    background: var(--dark-pink);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 120px 8%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story-card {
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 50px rgba(120, 50, 80, 0.08);
+
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+
+.story-card p {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.memories-section {
+    max-width: 1400px;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.photo-card {
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(120, 50, 80, 0.08);
+
+    transition: 0.4s;
+}
+
+
+.photo-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+}
+
+
+.photo-card img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+
+.photo-card p {
+    padding: 18px 10px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: #ffc0d5;
+}
+
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 50px;
+
+    margin-bottom: 50px;
+}
+
+
+.timeline-dot {
+    position: absolute;
+
+    left: 0;
+    top: 5px;
+
+    width: 22px;
+    height: 22px;
+
+    background: var(--pink);
+
+    border: 5px solid var(--light-pink);
+
+    border-radius: 50%;
+}
+
+
+.timeline-content {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(120, 50, 80, 0.06);
+}
+
+
+.timeline-content span {
+    color: var(--pink);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.timeline-content h3 {
+    margin: 8px 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter-section {
+    text-align: center;
+}
+
+
+.letter {
+    max-width: 750px;
+
+    margin: auto;
+    padding: 50px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    text-align: left;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    box-shadow: 0 20px 60px rgba(120, 50, 80, 0.08);
+}
+
+
+.letter p {
+    margin-bottom: 20px;
+}
+
+
+.signature {
+    color: var(--dark-pink);
+}
+
+
+/* =========================
+   SURPRISE BUTTON
+========================= */
+
+.surprise-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 16px 30px;
+
+    background: var(--pink);
+
+    color: white;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    box-shadow: 0 10px 25px rgba(255, 79, 139, 0.25);
+
+    transition: 0.3s;
+}
+
+
+.surprise-button:hover {
+    background: var(--dark-pink);
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 15px 30px rgba(255, 79, 139, 0.35);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background: #351e27;
+
+    color: #ffdce8;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -20px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    animation: floatHeart 5s linear forwards;
+
+    z-index: 999;
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .section {
+        padding: 90px 20px;
+    }
+
+    .section h2 {
+        font-size: 42px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 400px;
+    }
+
+    .story-card,
+    .letter {
+        padding: 30px;
+    }
+
+}
